@@ -1,0 +1,4 @@
+/* Components */
+@import './components/footer/style.css';
+/* Pages */
+@import './pages/index/style.css';
