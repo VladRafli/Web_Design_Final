@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Burgher King Order Form</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="/html/index.html" class="navbar-brand">Burgher King</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <nav class="navbar-nav">
+                <div class="nav-item">
+                    <a href="/public/index.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/public/menu.html" class="nav-link">Menu</a>
+                </div>
+                <div class="nav-item active">
+                    <a href="/public/order.html" class="nav-link">Order</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/public/coming-soon.html" class="nav-link">Coming Soon</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/public/about-us.html" class="nav-link">About Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="my-5">
+        <h1 class="text-center">Order</h1>
+        <div class="container-lg d-flex flex-column align-items-center">
+            <form class="order-form d-flex flex-column" method="post">
+                <input class="my-3 py-2 px-3" type="text" name="name" id="name" placeholder="Full Name" required>
+                <input class="my-3 py-2 px-3" type="email" name="email" id="email" placeholder="Email" required>
+                <!-- Selected Burger -->
+                <div class="my-3 p-3 form-group card orders">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-5">Orders List</h2>
+                        <div class="d-flex flex-column">
+                            <p>No order listed</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add new order -->
+                <a class="my-3 add-order btn btn-success" href="javascript:void(0);" data-toggle="modal"
+                    data-target="#exampleModal">Add new order</a>
+                <!-- Add Order modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Menu List</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="p-3 col-lg-4 col-sm-12">
+                                            <div class="menu card">
+                                                <img class="card-img-top"
+                                                    src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg"
+                                                    alt="">
+                                                <div class="card-body w-100 px-3">
+                                                    <p class="font-weight-bold">Menu 1</p>
+                                                    <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center"
+                                                        href="javascript:void(0);">Order</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 col-lg-4 col-sm-12">
+                                            <div class="menu card">
+                                                <img class="card-img-top"
+                                                    src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg"
+                                                    alt="">
+                                                <div class="card-body w-100 px-3">
+                                                    <p class="font-weight-bold">Menu 2</p>
+                                                    <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center"
+                                                        href="javascript:void(0);">Order</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 col-lg-4 col-sm-12">
+                                            <div class="menu card">
+                                                <img class="card-img-top"
+                                                    src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg"
+                                                    alt="">
+                                                <div class="card-body w-100 px-3">
+                                                    <p class="font-weight-bold">Menu 3</p>
+                                                    <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center"
+                                                        href="javascript:void(0);">Order</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 col-lg-4 col-sm-12">
+                                            <div class="menu card">
+                                                <img class="card-img-top"
+                                                    src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg"
+                                                    alt="">
+                                                <div class="card-body w-100 px-3">
+                                                    <p class="font-weight-bold">Menu 4</p>
+                                                    <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center"
+                                                        href="javascript:void(0);">Order</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 col-lg-4 col-sm-12">
+                                            <div class="menu card">
+                                                <img class="card-img-top"
+                                                    src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg"
+                                                    alt="">
+                                                <div class="card-body w-100 px-3">
+                                                    <p class="font-weight-bold">Menu 5</p>
+                                                    <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center"
+                                                        href="javascript:void(0);">Order</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 col-lg-4 col-sm-12">
+                                            <div class="menu card">
+                                                <img class="card-img-top"
+                                                    src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg"
+                                                    alt="">
+                                                <div class="card-body w-100 px-3">
+                                                    <p class="font-weight-bold">Menu 6</p>
+                                                    <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center"
+                                                        href="javascript:void(0);">Order</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button type="button" class="py-2 px-5 btn btn-secondary"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Check if No Order inputed -->
+                <input type="hidden" name="isEmpty" value="true">
+                <!--  -->
+                <textarea class="my-3 py-2 px-3" name="address" id="address" rows="3" placeholder="Address"></textarea>
+                <div class="my-3 form-group">
+                    <input class="mr-2" type="checkbox" name="terms" id="terms" required>
+                    <label for="terms">Agree with <a href="#">Terms and Conditions</a></label>
+                </div>
+                <button class="my-3 py-2 px-3 btn btn-primary" type="submit">Place Order</button>
+            </form>
+        </div>
+    </main>
+    <footer class="d-flex justify-content-center align-items-center text-white bg-dark">
+        <p>Created with 💓 by <a href="https://github.com/VladRafli" target="_blank"
+                rel="noopener noreferer">VladRafli</a> and Kwan</p>
+    </footer>
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="assets/js/order.js"></script>
+</body>
+
+</html>

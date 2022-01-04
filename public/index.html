@@ -1,26 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>React App</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<head>
+    <title>Burgher King</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="/html/index.html" class="navbar-brand">Burgher King</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <nav class="navbar-nav">
+                <div class="nav-item active">
+                    <a href="/public/index.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/public/menu.html" class="nav-link">Menu</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/public/order.html" class="nav-link">Order</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/public/coming-soon.html" class="nav-link">Coming Soon</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/public/about-us.html" class="nav-link">About Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="image-slider">
+            <button class="h-75 position-absolute" id="left-button">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <!-- <img class="h-75 w-100 position-absolute" src="../img/forest-931706.jpg" alt="">
+            <img class="h-75 w-100 position-absolute" src="../img/green-1072828.jpg" alt="">
+            <img class="h-75 w-100 position-absolute" src="../img/kristopher-roller-zepnJQycr4U-unsplash.jpg" alt=""> -->
+            <button class="h-75 position-absolute" id="right-button">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+        <section class="hot-deals">
+            <h1 class="text-center">Order Now</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="p-3 col-lg-4 col-sm-12">
+                        <div class="menu card">
+                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <div class="card-body w-100 px-3">
+                                <p class="font-weight-bold">Menu</p>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 col-lg-4 col-sm-12">
+                        <div class="menu card">
+                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <div class="card-body w-100 px-3">
+                                <p class="font-weight-bold">Menu</p>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 col-lg-4 col-sm-12">
+                        <div class="menu card">
+                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <div class="card-body w-100 px-3">
+                                <p class="font-weight-bold">Menu</p>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 col-lg-4 col-sm-12">
+                        <div class="menu card">
+                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <div class="card-body w-100 px-3">
+                                <p class="font-weight-bold">Menu</p>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 col-lg-4 col-sm-12">
+                        <div class="menu card">
+                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <div class="card-body w-100 px-3">
+                                <p class="font-weight-bold">Menu</p>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 col-lg-4 col-sm-12">
+                        <div class="menu card">
+                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <div class="card-body w-100 px-3">
+                                <p class="font-weight-bold">Menu</p>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="d-flex justify-content-center align-items-center text-white bg-dark">
+        <p>Created with 💓 by <a href="https://github.com/VladRafli" target="_blank"
+                rel="noopener noreferer">VladRafli</a> and Kwan</p>
+    </footer>
     <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+    <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <!-- <script>
+        console.log($('.image-slider > img').length)
+        let sliderLength = $('.image-slider > img').length
+        let sliderIndex = 0
+
+        $('.image-slider > img').each((i, e) => {
+            e.style.transform = "translateX(-100%)"
+        })
+        $('.image-slider > img')[sliderIndex].style.transform = "translateX(0%)"
+
+        $('.image-slider > #left-button').click(() => {
+            let pos = 0
+            setInterval()
+            $('.image-slider > img')[sliderIndex].style.transform = `translateX(-${pos}%)`
+        })
+    </script> -->
+</body>
+
 </html>

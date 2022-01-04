@@ -1,0 +1,76 @@
+body {
+  scroll-behavior: smooth;
+}
+
+/* Carousel -> Use image-slider so not collide with bootstrap carousel class */
+
+.image-slider {
+  height: 75vh;
+  overflow-x: hidden;
+}
+
+.image-slider > img {
+  z-index: -1;
+}
+
+.image-slider > #left-button,
+.image-slider > #right-button {
+  width: 5vw;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+  transition: background-color 200ms ease-in-out;
+  z-index: 1;
+}
+
+.image-slider > #left-button:hover,
+.image-slider > #right-button:hover {
+  background-color: rgba(145, 145, 145, 0.5);
+}
+
+.image-slider > #right-button {
+  right: 0;
+}
+
+/* Menus */
+
+.menu > img {
+  height: 12rem;
+}
+
+.menu > div > p {
+  font-size: 1.5rem;
+}
+
+/* Order Menu Form */
+
+.order-form {
+  width: 50%;
+}
+
+.order-form input::-webkit-outer-spin-button,
+.order-form input::-webkit-inner-spin-button {
+  margin: 0;
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+.order input[type=number] {
+    height: 2.5rem;
+    width: 3.5rem;
+}
+
+@media screen and (max-width: 576px) {
+  .order-form {
+    width: 100%;
+  }
+}
+
+/* Footer */
+
+footer {
+  height: 10vh;
+}
