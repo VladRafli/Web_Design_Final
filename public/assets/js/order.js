@@ -1,8 +1,3 @@
-$('form').submit((e) => {
-    e.preventDefault()
-    
-})
-
 let orders = []
 $('.menu > .card-body > a').each((i, e) => {
     e.addEventListener('click', (e) => {
@@ -10,8 +5,9 @@ $('.menu > .card-body > a').each((i, e) => {
             menuId: i + 1,
             quantity: 1
         })
-        console.log(orders)
-        $('.orders > input[name=\"isEmpty\"]').attr("value", "false")
+        // DEBUG
+        // console.log(orders)
+        $('.order-form > input[name=\"isEmpty\"]').attr("value", "false")
         $('.orders > .card-body > div').html('')
         orders.forEach((val, idx, arr) => {
             $('.orders > .card-body > div')
@@ -21,6 +17,11 @@ $('.menu > .card-body > a').each((i, e) => {
                         <img class="mr-3 " src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt=""
                             height="100">
                         <p><b>Menu ${val.menuId}</b></p>
+                        <input
+                            type="hidden"
+                            name="order-id"
+                            value="menu-${val.menuId}"
+                        >
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <button class="mr-1 btn btn-primary" id="decrement" type="button">-</button>
@@ -47,7 +48,7 @@ $('.menu > .card-body > a').each((i, e) => {
                             .indexOf(val.menuId)
                     ].quantity -= 1
                     // DEBUG
-                    console.log(orders)
+                    // console.log(orders)
                 }
             })
             $(`.order-${val.menuId} #increment`).click((e) => {
@@ -59,7 +60,7 @@ $('.menu > .card-body > a').each((i, e) => {
                             .indexOf(val.menuId)
                     ].quantity += 1
                     // DEBUG
-                    console.log(orders)
+                    // console.log(orders)
                 }
 
             })
@@ -75,9 +76,82 @@ $('.menu > .card-body > a').each((i, e) => {
                     $('.orders > input[name=\"isEmpty\"]').attr("value", "true")
                 }
                 // DEBUG
-                console.log(orders)
+                // console.log(orders)
             })
         })
 
     })
+})
+
+// 
+// Validation
+// 
+
+$('.order-form').submit((e) => {
+    e.preventDefault()
+    let serialized = $('.order-form').serializeArray()
+    let termsInput = serialized.find(o => o.name === 'terms') === undefined ? 'off' : 'on'
+    let orderList = []
+    $('.orders > div > div').children('.order').each((i, e) => {
+        orderList.push({
+            menuId: e.querySelector('div > input[name=\"order-id\"]').getAttribute('value'),
+            menuName: e.querySelector('div > p > b').innerHTML,
+            quantity: e.querySelector('div > input[type=\"number\"]').getAttribute('value')
+        })
+    })
+    let formData = {
+        name: serialized.find(o => o.name === 'name').value,
+        email: serialized.find(o => o.name === 'email').value,
+        order: {
+            amount: $('.orders > div > div').children(".order").length,
+            list: orderList
+        },
+        isEmpty: serialized.find(o => o.name === 'isEmpty').value,
+        address: serialized.find(o => o.name === 'address').value,
+        terms: termsInput,
+    }
+    console.log(formData)
+    if (formData.name === '') {
+        $('.order-form > #name').addClass('is-invalid')
+    } else {
+        if ($('.order-form > #name').hasClass('is-invalid')) {
+            $('.order-form > #name').removeClass('is-invalid')
+        }
+        $('.order-form > #name').addClass('is-valid')
+    }
+    if (formData.email.indexOf('@') === -1) {
+        $('.order-form > #email').addClass('is-invalid')
+    } else {
+        if ($('.order-form > #email').hasClass('is-invalid')) {
+            $('.order-form > #email').removeClass('is-invalid')
+        }
+        $('.order-form > #email').addClass('is-valid')
+    }
+    if (formData.order.amount === 0) {
+        $('.order-form > #orders').addClass('is-invalid')
+    } else {
+        if ($('.order-form > #orders').hasClass('is-invalid')) {
+            $('.order-form > #orders').removeClass('is-invalid')
+        }
+        $('.order-form > #orders').addClass('is-valid')
+    }
+    if (formData.address === '') {
+        $('.order-form > #address').addClass('is-invalid')
+    } else {
+        if ($('.order-form > #address').hasClass('is-invalid')) {
+            $('.order-form > #address').removeClass('is-invalid')
+        }
+        $('.order-form > #address').addClass('is-valid')
+    }
+    if (formData.terms === 'off') {
+        $('.order-form > #address').addClass('is-invalid')
+    } else if (formData.terms === 'on') {
+        if ($('.order-form > #address').hasClass('is-invalid')) {
+            $('.order-form > #address').removeClass('is-invalid')
+        }
+        $('.order-form > #address').addClass('is-valid')
+    }
+    if ($('.order-form > #name~#email~#orders~#address').hasClass('is-valid')) {
+        $('.order-form').addClass('was-validated')
+    }
 })

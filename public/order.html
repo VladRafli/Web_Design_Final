@@ -13,7 +13,7 @@
 
 <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="/html/index.html" class="navbar-brand">Burgher King</a>
+        <a href="/public/index.html" class="navbar-brand">Burgher King</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
             aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,17 +41,28 @@
     <main class="my-5">
         <h1 class="text-center">Order</h1>
         <div class="container-lg d-flex flex-column align-items-center">
-            <form class="order-form d-flex flex-column" method="post">
-                <input class="my-3 py-2 px-3" type="text" name="name" id="name" placeholder="Full Name" required>
-                <input class="my-3 py-2 px-3" type="email" name="email" id="email" placeholder="Email" required>
+            <form class="order-form d-flex flex-column" method="post" novalidate>
+                <input class="my-3 py-2 px-3 form-control" type="text" name="name" id="name" placeholder="Full Name" aria-describedby="name-feedback"
+                    required>
+                <div class="invalid-feedback" id="name-feedback">
+                    <p>Please enter your name</p>
+                </div>
+                <input class="my-3 py-2 px-3 form-control" type="email" name="email" id="email" placeholder="Email" aria-describedby="email-feedback"
+                    required>
+                <div class="invalid-feedback" id="email-feedback">
+                    <p>Please enter your email</p>
+                </div>
                 <!-- Selected Burger -->
-                <div class="my-3 p-3 form-group card orders">
+                <div class="my-3 p-3 form-group card orders" id="orders" aria-describedby="order-feedback">
                     <div class="card-body">
                         <h2 class="card-title text-center mb-5">Orders List</h2>
                         <div class="d-flex flex-column">
                             <p>No order listed</p>
                         </div>
                     </div>
+                </div>
+                <div class="invalid-feedback" id="order-feedback">
+                    <p>Please enter an order</p>
                 </div>
                 <!-- Add new order -->
                 <a class="my-3 add-order btn btn-success" href="javascript:void(0);" data-toggle="modal"
@@ -155,10 +166,16 @@
                 <!-- Check if No Order inputed -->
                 <input type="hidden" name="isEmpty" value="true">
                 <!--  -->
-                <textarea class="my-3 py-2 px-3" name="address" id="address" rows="3" placeholder="Address"></textarea>
+                <textarea class="my-3 py-2 px-3" name="address" id="address" rows="3" placeholder="Address" aria-describedby="address-feedback"></textarea>
+                <div class="invalid-feedback" id="address-feedback">
+                    <p>Please enter a valid address</p>
+                </div>
                 <div class="my-3 form-group">
-                    <input class="mr-2" type="checkbox" name="terms" id="terms" required>
+                    <input class="mr-2" type="checkbox" name="terms" id="terms" aria-describedby="terms-feedback" required>
                     <label for="terms">Agree with <a href="#">Terms and Conditions</a></label>
+                </div>
+                <div class="invalid-feedback" id="terms-feedback">
+                    <p>Please agree with our Terms and Conditions</p>
                 </div>
                 <button class="my-3 py-2 px-3 btn btn-primary" type="submit">Place Order</button>
             </form>
