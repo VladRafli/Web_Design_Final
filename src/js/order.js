@@ -1,3 +1,4 @@
+let Menu = ['Family Pack for 5 people','Nasi King Box Special','Cheese BuRHger King','Kids Box Special Blacpink','Beef Special BuRHger XL','Special BuRHger King']
 let orders = []
 $('.menu > .card-body > a').each((i, e) => {
     e.addEventListener('click', (e) => {

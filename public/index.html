@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Burgher King</title>
+    <title>BuRHger King</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,28 @@
     <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="manifest.json">
+    <style>
+        .sliderContainer{
+            display: flex;
+        }
+        #slides{
+            display: flex;
+            position: relative;
+        }
+        #slider{
+            width:960px;
+            overflow: hidden;
+        }
+        #leftBtn,#rightBtn{
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 
 <body>
     <header class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="/public/index.html" class="navbar-brand">Burgher King</a>
+        <a href="/public/index.html" class="navbar-brand">BuRHger King</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
             aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,71 +57,89 @@
         </div>
     </header>
     <main>
-        <section class="image-slider">
+        <!-- 
             <button class="h-75 position-absolute" id="left-button">
                 <i class="fas fa-chevron-left"></i>
             </button>
-            <!-- <img class="h-75 w-100 position-absolute" src="../img/forest-931706.jpg" alt="">
-            <img class="h-75 w-100 position-absolute" src="../img/green-1072828.jpg" alt="">
-            <img class="h-75 w-100 position-absolute" src="../img/kristopher-roller-zepnJQycr4U-unsplash.jpg" alt=""> -->
+            <div id="slides">
+                <img class="h-75 w-100 position-absolute" id="slide" src="./assets/img/promotion1.jpg" alt="">
+                <img class="h-75 w-100 position-absolute" id="slide" src="./assets/img/promotion2.jpg" alt="">
+                <img class="h-75 w-100 position-absolute" id="slide" src="./assets/img/promotion3.jpg" alt=""> 
+            </div>
             <button class="h-75 position-absolute" id="right-button">
                 <i class="fas fa-chevron-right"></i>
             </button>
+         -->
+        <!-- class image-slider == sliderContainer -->
+        <section class="image-slider w-100 d-flex justify-content-center">
+            
+            <div class="sliderContainer w-100">
+                <button id="leftBtn">Left</button>
+                <div id="slider">
+                    <div id="slides">
+                        <div id="slide"><img src="./assets/img/promotion1.jpg" width="1300" alt=""></div>
+                        <div id="slide"><img src="./assets/img/promotion2.jpg" width="1300" alt=""></div>
+                        <div id="slide"><img src="./assets/img/promotion3.jpg" width="1300" alt=""></div>
+                    </div>
+                </div>
+                <button id="rightBtn">Right</button>
+            </div>
         </section>
+
         <section class="hot-deals">
             <h1 class="text-center">Order Now</h1>
             <div class="container">
                 <div class="row">
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <img class="card-img-top" src="./assets/img/bestseller1.png" alt="">
                             <div class="card-body w-100 px-3">
-                                <p class="font-weight-bold">Menu</p>
+                                <p class="font-weight-bold">Family Pack for 5 people</p>
                                 <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <img class="card-img-top" src="./assets/img/bestseller2.png" alt="">
                             <div class="card-body w-100 px-3">
-                                <p class="font-weight-bold">Menu</p>
+                                <p class="font-weight-bold">Nasi King Box Special</p>
                                 <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <img class="card-img-top" src="./assets/img/bestseller3.png" alt="">
                             <div class="card-body w-100 px-3">
-                                <p class="font-weight-bold">Menu</p>
+                                <p class="font-weight-bold">Cheese BuRHger King</p>
                                 <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <img class="card-img-top" src="./assets/img/bestseller4.png" alt="">
                             <div class="card-body w-100 px-3">
-                                <p class="font-weight-bold">Menu</p>
+                                <p class="font-weight-bold">Kids Box Special Blacpink</p>
                                 <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <img class="card-img-top" src="./assets/img/bestseller5.png" alt="">
                             <div class="card-body w-100 px-3">
-                                <p class="font-weight-bold">Menu</p>
+                                <p class="font-weight-bold">Beef Special BuRHger XL</p>
                                 <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="assets/img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" alt="">
+                            <img class="card-img-top" src="./assets/img/bestseller6.png" alt="">
                             <div class="card-body w-100 px-3">
-                                <p class="font-weight-bold">Menu</p>
+                                <p class="font-weight-bold">Special BuRHger King</p>
                                 <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
                             </div>
                         </div>
@@ -118,7 +153,7 @@
                 rel="noopener noreferer">VladRafli</a> and Kwan</p>
     </footer>
     <!-- JS, Popper.js, and jQuery -->
-    <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Font Awesome -->
@@ -139,6 +174,7 @@
             $('.image-slider > img')[sliderIndex].style.transform = `translateX(-${pos}%)`
         })
     </script> -->
+    <script src="/public/assets/js/index.js"></script>
 </body>
 
 </html>
