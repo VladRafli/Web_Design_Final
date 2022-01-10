@@ -1,4 +1,4 @@
-let slideWidth = $('.sliderContainer').width()
+let slideWidth = $('#slide').width()
 $('#slides').css("margin-left", -slideWidth)
 $('#slides:last-child').prependTo("#slides")
 
