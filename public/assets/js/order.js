@@ -1,3 +1,6 @@
+// ==============
+// Place Order
+// ==============
 let orders = []
 $('.menu > .card-body > a').each((i, e) => {
     e.addEventListener('click', (e) => {
@@ -83,9 +86,9 @@ $('.menu > .card-body > a').each((i, e) => {
     })
 })
 
-// 
+// =============
 // Validation
-// 
+// =============
 
 $('.order-form').submit((e) => {
     e.preventDefault()
@@ -110,7 +113,8 @@ $('.order-form').submit((e) => {
         address: serialized.find(o => o.name === 'address').value,
         terms: termsInput,
     }
-    console.log(formData)
+    // DEBUG
+    // console.log(formData)
     if (formData.name === '') {
         $('.order-form > #name').addClass('is-invalid')
     } else {
