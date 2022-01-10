@@ -10,6 +10,23 @@
     <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="manifest.json">
+    <style>
+        .sliderContainer{
+            display: flex;
+        }
+        #slides{
+            display: flex;
+            position: relative;
+        }
+        #slider{
+            width:960px;
+            overflow: hidden;
+        }
+        #leftBtn,#rightBtn{
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,17 +57,35 @@
         </div>
     </header>
     <main>
-        <section class="image-slider">
+        <!-- 
             <button class="h-75 position-absolute" id="left-button">
                 <i class="fas fa-chevron-left"></i>
             </button>
-            <!-- <img class="h-75 w-100 position-absolute" src="../img/forest-931706.jpg" alt="">
-            <img class="h-75 w-100 position-absolute" src="../img/green-1072828.jpg" alt="">
-            <img class="h-75 w-100 position-absolute" src="../img/kristopher-roller-zepnJQycr4U-unsplash.jpg" alt=""> -->
+            <div id="slides">
+                <img class="h-75 w-100 position-absolute" id="slide" src="./assets/img/promotion1.jpg" alt="">
+                <img class="h-75 w-100 position-absolute" id="slide" src="./assets/img/promotion2.jpg" alt="">
+                <img class="h-75 w-100 position-absolute" id="slide" src="./assets/img/promotion3.jpg" alt=""> 
+            </div>
             <button class="h-75 position-absolute" id="right-button">
                 <i class="fas fa-chevron-right"></i>
             </button>
+         -->
+        <!-- class image-slider == sliderContainer -->
+        <section class="image-slider">
+            
+            <div class="sliderContainer w-100">
+                <button id="leftBtn">Left</button>
+                <div id="slider">
+                    <div id="slides">
+                        <div id="slide"><img src="./assets/img/promotion1.jpg" alt=""></div>
+                        <div id="slide"><img src="./assets/img/promotion2.jpg" alt=""></div>
+                        <div id="slide"><img src="./assets/img/promotion3.jpg" alt=""></div>
+                    </div>
+                </div>
+                <button id="rightBtn">Right</button>
+            </div>
         </section>
+
         <section class="hot-deals">
             <h1 class="text-center">Order Now</h1>
             <div class="container">
@@ -118,7 +153,7 @@
                 rel="noopener noreferer">VladRafli</a> and Kwan</p>
     </footer>
     <!-- JS, Popper.js, and jQuery -->
-    <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Font Awesome -->
@@ -139,6 +174,7 @@
             $('.image-slider > img')[sliderIndex].style.transform = `translateX(-${pos}%)`
         })
     </script> -->
+    <script src="/public/assets/js/index.js"></script>
 </body>
 
 </html>

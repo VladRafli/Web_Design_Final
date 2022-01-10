@@ -36,7 +36,14 @@
         </div>
     </header>
     <main>
-
+        <div class="mb-5 d-flex justify-content-center">
+            <canvas id="canvas" width="500px" height="500px"></canvas>
+        </div>
+        <div class= "d-flex justify-content-center">
+            <video width="80%" controls>
+                <source src="./assets/img/comingsoonvideo(edit).mp4" type="video/mp4">
+            </video>
+        </div>
     </main>
     <footer class="d-flex justify-content-center align-items-center text-white bg-dark">
         <p>Created with 💓 by <a href="https://github.com/VladRafli" target="_blank" rel="noopener noreferer">VladRafli</a> and Kwan</p>
@@ -47,5 +54,145 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Font Awesome -->
     <script src="/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script>
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext('2d');
+        canvas.width= canvas.scrollWidth;
+        canvas.height= canvas.scrollHeight
+
+        let canvasW=canvas.width;
+        let canvasH=canvas.height;
+
+        let counter = 0;
+        let keatas = true;
+        let kebawah = false;
+
+        let bottomBreadX = 200;
+        let bottomBreadY = 400;
+        let hamX = 180;
+        let hamY = 375;
+        let cheeseX = 160;
+        let cheeseY = 342;
+        let tomatoX = 190;
+        let tomatoY = 333;
+        let ham2X = 180;
+        let ham2Y = 328;
+        let cheese2X = 160;
+        let cheese2Y = 295;
+        let topBreadX = 160;
+        let topBreadY = 285;
+            
+        function animasi(){
+            ctx.save();
+            ctx.clearRect(0,0,canvasW,canvasH);
+
+            // Tulisan
+            ctx.font = "30px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText("Double Cheese BuRHger King",canvas.width/2,100);
+
+            // bottom bread
+            ctx.fillStyle = "#DEB887";
+            ctx.beginPath();
+            ctx.moveTo(bottomBreadX, bottomBreadY);
+            ctx.lineTo(bottomBreadX+100,bottomBreadY);
+            ctx.quadraticCurveTo(bottomBreadX+140,bottomBreadY,bottomBreadX+140,bottomBreadY-20);
+            ctx.lineTo(bottomBreadX-40,bottomBreadY-20);
+            ctx.quadraticCurveTo(bottomBreadX-40,bottomBreadY,bottomBreadX,bottomBreadY);
+            ctx.fill();
+            
+            // ham
+            ctx.fillStyle="brown"
+            ctx.beginPath();
+            ctx.moveTo(hamX,hamY);
+            ctx.lineTo(hamX+140,hamY);
+            ctx.quadraticCurveTo(hamX+160,hamY,hamX+140,hamY-25);
+            ctx.lineTo(hamX,hamY-25);
+            ctx.quadraticCurveTo(hamX-20,hamY,hamX,hamY);
+            ctx.fill();
+
+            // cheese 
+            ctx.lineWidth =5;
+            ctx.beginPath();
+            ctx.moveTo(cheeseX,cheeseY);
+            ctx.lineTo(cheeseX+180,cheeseY);
+            ctx.strokeStyle = 'yellow';
+            ctx.stroke();
+
+            //tomato
+            ctx.strokeStyle="red";
+            ctx.beginPath();
+            ctx.moveTo(tomatoX,tomatoY);
+            ctx.lineTo(tomatoX+55,tomatoY);
+            ctx.stroke();
+            let tomato2X = 255;
+            ctx.strokeStyle="red";
+            ctx.beginPath();
+            ctx.moveTo(tomato2X,tomatoY);
+            ctx.lineTo(tomato2X+55,tomatoY);
+            ctx.stroke();
+
+            // ham2
+            ctx.fillStyle="brown"
+            ctx.beginPath();
+            ctx.moveTo(ham2X,ham2Y);
+            ctx.lineTo(ham2X+140,ham2Y);
+            ctx.quadraticCurveTo(ham2X+160,ham2Y,ham2X+140,ham2Y-25);   
+            ctx.lineTo(ham2X,ham2Y-25);
+            ctx.quadraticCurveTo(ham2X-20,ham2Y,ham2X,ham2Y);
+            ctx.fill();
+
+            // cheese2 
+            ctx.lineWidth =5;
+            ctx.beginPath();
+            ctx.moveTo(cheese2X,cheese2Y);
+            ctx.lineTo(cheese2X+180,cheese2Y);;
+            ctx.strokeStyle = 'yellow';
+            ctx.stroke();
+
+            // top bread
+            ctx.fillStyle = "#DEB887";
+            ctx.beginPath();
+            ctx.moveTo(topBreadX,topBreadY);
+            ctx.lineTo(topBreadX+180,topBreadY);
+            ctx.quadraticCurveTo(340,topBreadY-20,320,topBreadY-20);
+            ctx.lineTo(topBreadX+20,topBreadY-20);
+            ctx.quadraticCurveTo(160,topBreadY-20,160,topBreadY);
+            ctx.fill();
+        
+            if (counter == 100) {
+                keatas = false;
+                kebawah = true;
+            } else if (counter == 0) {
+                keatas = true;
+                kebawah = false;
+            }
+
+            if (keatas) {
+                counter++;
+                bottomBreadY++;
+                hamY++;
+                cheeseY++;
+                tomatoY++;
+                ham2Y++;
+                cheese2Y++;
+                topBreadY++;
+            } else if (kebawah) {
+                counter--;
+                bottomBreadY--;
+                hamY--;
+                cheeseY--;
+                tomatoY--;
+                ham2Y--;
+                cheese2Y--;
+                topBreadY--;
+            }
+
+            ctx.restore();
+        }
+
+        setInterval(animasi,10);
+        
+    </script>
 </body>
 </html>
