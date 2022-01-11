@@ -3,33 +3,40 @@ body {
 }
 
 /* Carousel -> Use image-slider so not collide with bootstrap carousel class */
+/* Code Based on Lab Topic of Image Slider */
 
-.image-slider {
-  height: 75vh;
-  overflow-x: hidden;
+.sliderContainer {
+  display: flex;
+  height: fit-content;
 }
 
-.image-slider > img {
-  z-index: -1;
+#slides {
+  display: flex;
+  position: relative;
 }
 
-.image-slider > #left-button,
-.image-slider > #right-button {
+#slider {
+  overflow: hidden;
+}
+
+.image-slider #leftBtn,
+.image-slider #rightBtn {
   width: 5vw;
+  position: relative;
   border: none;
-  background-color: transparent;
+  background-color: grey;
   color: white;
   font-size: 1.5rem;
   transition: background-color 200ms ease-in-out;
-  z-index: 1;
+  z-index: 2;
 }
 
-.image-slider > #left-button:hover,
-.image-slider > #right-button:hover {
+.image-slider #leftBtn:hover,
+.image-slider #rightBtn:hover {
   background-color: rgba(145, 145, 145, 0.5);
 }
 
-.image-slider > #right-button {
+.image-slider #rightBtn {
   right: 0;
 }
 
@@ -58,9 +65,9 @@ body {
   appearance: none;
 }
 
-.order input[type=number] {
-    height: 2.5rem;
-    width: 3.5rem;
+.order input[type="number"] {
+  height: 2.5rem;
+  width: 3.5rem;
 }
 
 @media screen and (max-width: 576px) {

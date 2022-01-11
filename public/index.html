@@ -10,23 +10,6 @@
     <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="manifest.json">
-    <style>
-        .sliderContainer{
-            display: flex;
-        }
-        #slides{
-            display: flex;
-            position: relative;
-        }
-        #slider{
-            width:960px;
-            overflow: hidden;
-        }
-        #leftBtn,#rightBtn{
-            position: relative;
-            z-index: 2;
-        }
-    </style>
 </head>
 
 <body>
@@ -57,24 +40,11 @@
         </div>
     </header>
     <main>
-        <!-- 
-            <button class="h-75 position-absolute" id="left-button">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div id="slides">
-                <img class="h-75 w-100 position-absolute" id="slide" src="./assets/img/promotion1.jpg" alt="">
-                <img class="h-75 w-100 position-absolute" id="slide" src="./assets/img/promotion2.jpg" alt="">
-                <img class="h-75 w-100 position-absolute" id="slide" src="./assets/img/promotion3.jpg" alt=""> 
-            </div>
-            <button class="h-75 position-absolute" id="right-button">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-         -->
-        <!-- class image-slider == sliderContainer -->
         <section class="image-slider w-100 d-flex justify-content-center">
-            
             <div class="sliderContainer w-100">
-                <button id="leftBtn">Left</button>
+                <button id="leftBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
                 <div id="slider">
                     <div id="slides">
                         <div id="slide"><img src="./assets/img/promotion1.jpg" width="1300" alt=""></div>
@@ -82,7 +52,9 @@
                         <div id="slide"><img src="./assets/img/promotion3.jpg" width="1300" alt=""></div>
                     </div>
                 </div>
-                <button id="rightBtn">Right</button>
+                <button id="rightBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
@@ -92,55 +64,55 @@
                 <div class="row">
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="./assets/img/bestseller1.png" alt="">
+                            <img class="card-img-top" src="/public/assets/img/bestseller1.png" alt="">
                             <div class="card-body w-100 px-3">
                                 <p class="font-weight-bold">Family Pack for 5 people</p>
-                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="/public/order.html?id=1">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="./assets/img/bestseller2.png" alt="">
+                            <img class="card-img-top" src="/public/assets/img/bestseller2.png" alt="">
                             <div class="card-body w-100 px-3">
                                 <p class="font-weight-bold">Nasi King Box Special</p>
-                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="/public/order.html?id=2">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="./assets/img/bestseller3.png" alt="">
+                            <img class="card-img-top" src="/public/assets/img/bestseller3.png" alt="">
                             <div class="card-body w-100 px-3">
                                 <p class="font-weight-bold">Cheese BuRHger King</p>
-                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="/public/order.html?id=3">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="./assets/img/bestseller4.png" alt="">
+                            <img class="card-img-top" src="/public/assets/img/bestseller4.png" alt="">
                             <div class="card-body w-100 px-3">
                                 <p class="font-weight-bold">Kids Box Special Blacpink</p>
-                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="/public/order.html?id=4">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="./assets/img/bestseller5.png" alt="">
+                            <img class="card-img-top" src="/public/assets/img/bestseller5.png" alt="">
                             <div class="card-body w-100 px-3">
                                 <p class="font-weight-bold">Beef Special BuRHger XL</p>
-                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="/public/order.html?id=5">Order</a>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 col-lg-4 col-sm-12">
                         <div class="menu card">
-                            <img class="card-img-top" src="./assets/img/bestseller6.png" alt="">
+                            <img class="card-img-top" src="/public/assets/img/bestseller6.png" alt="">
                             <div class="card-body w-100 px-3">
                                 <p class="font-weight-bold">Special BuRHger King</p>
-                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="#">Order</a>
+                                <a class="btn btn-primary py-2 d-flex justify-content-center align-items-center" href="/public/order.html?id=6">Order</a>
                             </div>
                         </div>
                     </div>
@@ -158,22 +130,6 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Font Awesome -->
     <script src="/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
-    <!-- <script>
-        console.log($('.image-slider > img').length)
-        let sliderLength = $('.image-slider > img').length
-        let sliderIndex = 0
-
-        $('.image-slider > img').each((i, e) => {
-            e.style.transform = "translateX(-100%)"
-        })
-        $('.image-slider > img')[sliderIndex].style.transform = "translateX(0%)"
-
-        $('.image-slider > #left-button').click(() => {
-            let pos = 0
-            setInterval()
-            $('.image-slider > img')[sliderIndex].style.transform = `translateX(-${pos}%)`
-        })
-    </script> -->
     <script src="/public/assets/js/index.js"></script>
 </body>
 
